@@ -1,12 +1,6 @@
 package com.kodilla.testing.shape;
 
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
-
-import java.util.ArrayList;
-import com.kodilla.testing.shape.*;
+import org.junit.*;
 
 public class ShapeCollectorTestSuite {
     private static int testCounter = 0;
@@ -24,7 +18,7 @@ public class ShapeCollectorTestSuite {
         testCounter++;
         System.out.println("Preparing to execute test #" + testCounter);
     }
-
+    @Test
     public void testAddFigure () {
         //given
         Shape testTriangle=new Triangle(12, 6);
@@ -34,7 +28,7 @@ public class ShapeCollectorTestSuite {
         //then
         Assert.assertEquals("Triangle", testShapeCollector.getFigure(0).getShapeName());
     }
-
+    @Test
     public void testRemoveFigure () {
         //given
         Shape testTriangle=new Triangle(12, 6);
@@ -46,7 +40,7 @@ public class ShapeCollectorTestSuite {
         Assert.assertTrue(result);
         Assert.assertEquals(null, testShapeCollector.getFigure(0));
     }
-
+    @Test
     public void testGetFigure () {
         //given
         Shape testTriangle=new Triangle(12, 6);
@@ -57,7 +51,7 @@ public class ShapeCollectorTestSuite {
         //then
         Assert.assertEquals(testTriangle, testShapeCollector.getFigure(0));
     }
-
+    @Test
     public void testGetShapeName () {
         //given
         Shape testTriangle=new Triangle(12, 6);
@@ -68,7 +62,7 @@ public class ShapeCollectorTestSuite {
         //then
         Assert.assertEquals("Triangle", figureName);
     }
-
+    @Test
     public void testGetField () {
         //given
         Shape testTriangle=new Triangle(12, 6);

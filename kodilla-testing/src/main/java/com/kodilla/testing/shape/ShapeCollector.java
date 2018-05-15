@@ -20,7 +20,6 @@ public class ShapeCollector {
 
     public Shape getFigure (int n) {
     Shape figure=null;
-    //    ForumPost thePost = null;
         if (n >= 0 && n < shapes.size()) {
             figure = shapes.get(n);
         }
