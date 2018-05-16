@@ -24,7 +24,7 @@ public class calculateAdvStatisticsTestSuite {
 
         int quantityOfPosts=0;
 
-        int quantityOfComments=5;
+        int quantityOfComments=0;
         ForumStatistics forumStatistics=new ForumStatistics();
         forumStatistics.calculateAdvStatistics(statisticsMock);
         when(statisticsMock.postsCount()).thenReturn(quantityOfPosts);
