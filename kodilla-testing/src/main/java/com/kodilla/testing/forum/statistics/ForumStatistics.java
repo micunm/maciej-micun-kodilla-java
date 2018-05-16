@@ -14,14 +14,14 @@ public class ForumStatistics {
         numberOfComments = statistics.commentsCount();
 
         if (statistics.usersNames().size() > 0) {
-            avgNumberOfPostsPerUser = statistics.postsCount() / statistics.usersNames().size();
-            avgNumberOfCommentsPerUser = statistics.commentsCount() / statistics.usersNames().size();
+            avgNumberOfPostsPerUser = (double)statistics.postsCount() / (double)statistics.usersNames().size();
+            avgNumberOfCommentsPerUser = (double)statistics.commentsCount() / (double)statistics.usersNames().size();
         } else {
             avgNumberOfPostsPerUser = 0;
             avgNumberOfCommentsPerUser = 0;
         }
         if (statistics.postsCount() > 0) {
-            avgNumberOfCommentsPerPost = statistics.commentsCount() / statistics.postsCount();
+            avgNumberOfCommentsPerPost = (double)statistics.commentsCount() / (double)statistics.postsCount();
         } else {
             avgNumberOfCommentsPerPost = 0;
         }
@@ -46,11 +46,11 @@ public class ForumStatistics {
         }
 
         public void showStatistics () {
-            System.out.println(numberOfUsers);
-            System.out.println(numberOfPosts);
-            System.out.println(numberOfComments);
-            System.out.println(avgNumberOfPostsPerUser);
-            System.out.println(avgNumberOfCommentsPerUser);
-            System.out.println(avgNumberOfCommentsPerPost);
+            System.out.println("numberOfUsers: "+numberOfUsers);
+            System.out.println("numberOfPosts "+numberOfPosts);
+            System.out.println("numberOfComments "+numberOfComments);
+            System.out.println("avgNumberOfPostsPerUser "+avgNumberOfPostsPerUser);
+            System.out.println("avgNumberOfCommentsPerUser "+avgNumberOfCommentsPerUser);
+            System.out.println("avgNumberOfCommentsPerPost "+avgNumberOfCommentsPerPost);
         }
 }

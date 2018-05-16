@@ -17,6 +17,7 @@ public class ForumComment {
 
     public String getCommentBody() {
         return commentBody;
+
     }
 
     public String getAuthor() {
