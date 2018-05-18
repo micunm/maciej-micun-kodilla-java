@@ -1,6 +1,9 @@
 package com.kodilla.stream.beautifier;
 
-public interface PoemBeautifier {
+public class PoemBeautifier {
 
-    String beautify (String textToModification, UpgradeText upgradeText);
+    public void beautify (String textToModification, PoemDecorator textUpgrader) {
+        String resultText=textUpgrader.decorate(textToModification);
+        System.out.println(resultText);
+    }
 }

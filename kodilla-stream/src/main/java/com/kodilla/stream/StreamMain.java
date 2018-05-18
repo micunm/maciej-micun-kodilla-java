@@ -1,15 +1,16 @@
 package com.kodilla.stream;
 
+import com.kodilla.stream.beautifier.PoemBeautifier;
 import com.kodilla.stream.lambda.*;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
 public class StreamMain {
     public static void main(String[] args) {
-        //Processor processor=new Processor();
-        //ExecuteSaySomething executeSaySomething=new ExecuteSaySomething();
-//        Executor codeToExecute= () -> System.out.println("This is an example text");
-//        processor.execute(codeToExecute);
-    //    processor.execute(() -> System.out.println("This is an example text"));
+/*      Processor processor=new Processor();
+        ExecuteSaySomething executeSaySomething=new ExecuteSaySomething();
+        Executor codeToExecute= () -> System.out.println("This is an example text");
+        processor.execute(codeToExecute);
+        processor.execute(() -> System.out.println("This is an example text"));
         ExpressionExecutor expressionExecutor = new ExpressionExecutor();
 
         System.out.println("Calculating expressions with lambdas");
@@ -22,6 +23,17 @@ public class StreamMain {
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::multiplyAByB);
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::addAToB);
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::subBFromA);
-        expressionExecutor.executeExpression(3, 4, FunctionalCalculator::divideAByB);
+        expressionExecutor.executeExpression(3, 4, FunctionalCalculator::divideAByB);*/
+
+        // task 7.1
+        PoemBeautifier beautifier=new PoemBeautifier();
+        String testText="Tekst do testów.";
+
+        beautifier.beautify("Jakiś tam tekst", (text) -> text.toUpperCase());
+        beautifier.beautify("Jakiś tam tekst", (text) -> "ABC "+text+" ABC");
+        beautifier.beautify("Jakiś tam tekst", (text) -> "******** "+text+" ********");
+        beautifier.beautify("Jakiś tam tekst", (text) -> "_"+text.replace(" ", "_")+"_");
+        beautifier.beautify("Jakiś tam tekst", (text) -> "@@@@@@@@ "+text+" @@@@@");
+
     }
 }
