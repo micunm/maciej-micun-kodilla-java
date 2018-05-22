@@ -1,20 +1,18 @@
 package com.kodilla.stream.array;
 
-import java.util.stream.DoubleStream;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.stream.IntStream;
 
 public interface ArrayOperations {
     static double getAverage(int[] numbers) {
-        IntStream.range(0, numbers.length)
+        return IntStream.range(0, numbers.length)
                 .map (n -> numbers[n])
-                .forEach(System.out::println);
-
-        if (numbers.length!=0) {
-            double sumResult=IntStream.range(0, numbers.length)
-                    .map (n -> numbers[n])
-                    .sum();
-
-            return sumResult/((double)numbers.length);
-        } else { return 0; }
+                .map(n->{
+                    System.out.println(n);
+                    return n;
+                })
+                   //.average().getAsDouble();
+                .average().orElse(0);
     }
 }

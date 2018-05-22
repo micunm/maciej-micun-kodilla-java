@@ -1,5 +1,7 @@
 package com.kodilla.stream.invoice.simple;
 
+import java.util.Optional;
+
 public class SimpleItem {
     private final SimpleProduct product;
     private final double quantity;
@@ -19,5 +21,11 @@ public class SimpleItem {
 
     public double getValue() {
         return product.getProductPrice() * quantity;
+    }
+
+    public SimpleProduct getProductNotNull() {
+        Optional<SimpleProduct> sp=Optional.ofNullable(product);
+        return sp.orElse(new SimpleProduct("no Product found", 0));
+
     }
 }
