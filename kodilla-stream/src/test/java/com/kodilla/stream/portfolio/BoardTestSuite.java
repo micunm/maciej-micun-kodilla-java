@@ -145,11 +145,10 @@ public class BoardTestSuite {
         double avgQuamtityOfDaysOnTask=project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(t->t.getTasks().stream())
-                .map(t->Period.between(t.getCreated(),LocalDate.now()).getYears() )
+                .map(t->Period.between(t.getCreated(),LocalDate.now()).getDays() )
                 .mapToInt(n->n)
                 .average().orElse(0);
         //Then
-        Assert.assertEquals(0, avgQuamtityOfDaysOnTask);
-
+        Assert.assertEquals(10, avgQuamtityOfDaysOnTask, 0.0001);
     }
 }
