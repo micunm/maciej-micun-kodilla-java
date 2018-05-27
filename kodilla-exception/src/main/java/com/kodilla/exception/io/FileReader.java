@@ -11,15 +11,16 @@ public class FileReader {
     public void readFile() {
         ClassLoader classLoader = getClass().getClassLoader();
         File file=new File(classLoader.getResource("file/names.txt").getFile());
-      //  Path path=Paths.get(file.getPath());
-        Path path=Paths.get(file.getPath());
-
-        try {
-            Stream<String> fileLines= Files.lines(path);
+ //       Path path=Paths.get(file.getPath());
+//        Path path=Paths.get("C:/japko");
+        System.out.println(file.getPath());
+        try (Stream<String> fileLines= Files.lines(Paths.get(file.getPath()))) {
+            fileLines.forEach(System.out::println);
         } catch (IOException e) {
-            System.out.println("Oh no! Something wen wrong@ We will die!");
+            System.out.println("Oh no! Something wen wrong. Error: "+e);
+        } finally {
+            System.out.println("This sout will be executed always.");
         }
 
-        System.out.println(file.getPath());
     }
 }
