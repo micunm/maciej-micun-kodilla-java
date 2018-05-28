@@ -12,7 +12,7 @@ public class FileReaderWithoutHandling {
         File file=new File(classLoader.getResource("file/names.txt").getFile());
         System.out.println(file.getPath());
 
-        Stream<String> fileLines= Files.lines(Paths.get(file.getPath()))
+        Stream<String> fileLines= Files.lines(Paths.get(file.getPath()));
         fileLines.forEach(System.out::println);
 
     }
