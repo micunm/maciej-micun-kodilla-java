@@ -7,15 +7,15 @@ public class FlightsExceptionHandling {
         Flight flight3=new Flight("Gdansk", "Porto");
 
         FlightsSearcher flightSearcher=new FlightsSearcher();
-        String isFlightFoundText="No flights to given destination.";
+        //String isFlightFoundText="No flights to given destination.";
+        boolean isFlightFoundText=false;
 
         try {
             System.out.println("Searching for flights..");
             isFlightFoundText=flightSearcher.findFlight(flight2);
+            System.out.println(isFlightFoundText);
         } catch (Exception x) {
             System.out.println("Try with different destination.");
-        } finally {
-            System.out.println(isFlightFoundText);
         }
     }
 }
