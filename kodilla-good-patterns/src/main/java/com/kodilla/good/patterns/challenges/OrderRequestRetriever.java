@@ -8,9 +8,9 @@ public class OrderRequestRetriever {
         User user=new User("Jasiu", "Fasola");
 
         LocalDateTime orderDate=LocalDateTime.now();
-        UserOrder userOrder=new UserOrder();
+        OrderedProduct orderedProduct=new OrderedProduct(2, "toothbrush");
 
-        return new OrderRequest(user, userOrder, orderDate);
+        return new OrderRequest(user, orderedProduct, orderDate);
     }
 
 }
