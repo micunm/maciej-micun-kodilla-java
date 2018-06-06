@@ -5,7 +5,8 @@ import java.time.LocalDateTime;
 public class OrderRequestRetriever {
     public OrderRequest retrieve() {
 
-        User user=new User("Jasiu", "Fasola");
+        User user=new User("Jasiu", "Fasola",
+                "a@a", "krakow");
 
         LocalDateTime orderDate=LocalDateTime.now();
         OrderedProduct orderedProduct=new OrderedProduct(2, "toothbrush");

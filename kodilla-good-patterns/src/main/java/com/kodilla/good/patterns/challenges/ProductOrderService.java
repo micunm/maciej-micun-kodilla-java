@@ -1,7 +1,5 @@
 package com.kodilla.good.patterns.challenges;
 
-public class ProductOrderService {
-
-
-
+public interface ProductOrderService {
+    boolean process(OrderRequest orderRequest);
 }

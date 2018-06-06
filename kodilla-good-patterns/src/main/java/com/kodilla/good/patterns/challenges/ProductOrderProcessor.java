@@ -6,32 +6,24 @@ public class ProductOrderProcessor {
     private ProductOrderService productOrderService;
     private OrdersRepository ordersRepository;
 
-    /*    public class RentalProcessor {
+    public ProductOrderProcessor(OrderInformationService orderInformationService, ProductOrderService productOrderService, OrdersRepository ordersRepository) {
+        this.orderInformationService = orderInformationService;
+        this.productOrderService = productOrderService;
+        this.ordersRepository = ordersRepository;
+    }
 
-        private InformationService informationService;
-        private RentalService rentalService;
-        private RentalRepository rentalRepository;
+    public boolean processOrder (OrderRequest orderRequest) {
+        ordersRepository.save(orderRequest);
+        boolean result=productOrderService.process(orderRequest);
 
-        public RentalProcessor(final InformationService informationService,
-                               final RentalService rentalService,
-                               final RentalRepository rentalRepository) {
-            this.informationService = informationService;
-            this.rentalService = rentalService;
-            this.rentalRepository = rentalRepository;
+        if (result) {
+            orderInformationService.send("Order successfully processed");
+            return true;
+
+        } else {
+            orderInformationService.send("Can not process order");
+            return false;
         }
-
-        public RentalDto process(final RentRequest rentRequest) {
-            boolean isRented = rentalService.rent(rentRequest.getUser(), rentRequest.getFrom(),
-                    rentRequest.getTo());
-
-            if(isRented) {
-                informationService.inform(rentRequest.getUser());
-                rentalRepository.createRental(rentRequest.getUser(), rentRequest.getFrom(), rentRequest.getTo());
-                return new RentalDto(rentRequest.getUser(), true);
-            } else {
-                return new RentalDto(rentRequest.getUser(), false);
-            }
-        }
-    }*/
+    }
 
 }
