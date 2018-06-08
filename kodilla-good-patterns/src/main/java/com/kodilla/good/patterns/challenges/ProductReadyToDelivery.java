@@ -1,12 +1,19 @@
 package com.kodilla.good.patterns.challenges;
 
-public class ProductReadyToDelivery {
-    private int quantity;
-    private String productName;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
-    public ProductReadyToDelivery (int quantity, String productName) {
+public class ProductReadyToDelivery {
+    private String productName;
+    private int quantity;
+    private DeliveryCompany deliveryCompany;
+    private LocalDate productPreparationDate;
+
+    public ProductReadyToDelivery (String productName, int quantity, DeliveryCompany deliveryCompany, LocalDate productPreparationDate) {
         this.quantity = quantity;
         this.productName = productName;
+        this.deliveryCompany=deliveryCompany;
+        this.productPreparationDate=productPreparationDate;
     }
 
     public int getQuantity() {
@@ -15,5 +22,13 @@ public class ProductReadyToDelivery {
 
     public String getProductName() {
         return productName;
+    }
+
+    public DeliveryCompany getDeliveryCompany() {
+        return deliveryCompany;
+    }
+
+    public LocalDate getProductPreparationDate() {
+        return productPreparationDate;
     }
 }

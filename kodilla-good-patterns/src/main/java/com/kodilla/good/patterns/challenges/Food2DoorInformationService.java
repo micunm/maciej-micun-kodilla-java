@@ -1,4 +1,5 @@
 package com.kodilla.good.patterns.challenges;
 
-public class Food2DoorInformationService {
+public interface Food2DoorInformationService {
+    void send(String message);
 }

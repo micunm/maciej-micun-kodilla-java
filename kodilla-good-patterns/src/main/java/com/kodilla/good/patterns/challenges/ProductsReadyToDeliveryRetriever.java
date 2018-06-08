@@ -4,12 +4,13 @@ import java.time.LocalDateTime;
 
 public class ProductsReadyToDeliveryRetriever {
     public ProductReadyToDelivery retrieve() {
-        DeliveryCompany deliveryComp=new DeliveryCompany("Jasiu", "Fasola",
-                "a@a", "krakow");
+        DeliveryCompany extraFoodShop=new DeliveryCompany("ExtraFoodShop", "Reda",
+                "Polna 3", "84-240", ExtraFoodShopService extraFoodShopService);
+        DeliveryCompany healthyShop=new DeliveryCompany("HealthyShop", "Rumia", "Wiejska 4", "81-263");
+        DeliveryCompany glutenFreeShop=new DeliveryCompany("GlutenFreeShop", "Wejherowo", "Łąkowa 24", "83-212");
 
-        LocalDateTime orderDate=LocalDateTime.now();
-        OrderedProduct orderedProduct=new OrderedProduct(2, "toothbrush");
+        LocalDateTime productPreparationDate=LocalDateTime.now();
 
-        return new OrderRequest(user, orderedProduct, orderDate);
+        return new ProductReadyToDelivery("Watermelon", 12, extraFoodShop, productPreparationDate);
     }
 }
