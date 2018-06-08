@@ -7,9 +7,9 @@ public class ProductReadyToDelivery {
     private String productName;
     private int quantity;
     private DeliveryCompany deliveryCompany;
-    private LocalDate productPreparationDate;
+    private LocalDateTime productPreparationDate;
 
-    public ProductReadyToDelivery (String productName, int quantity, DeliveryCompany deliveryCompany, LocalDate productPreparationDate) {
+    public ProductReadyToDelivery (String productName, int quantity, DeliveryCompany deliveryCompany, LocalDateTime productPreparationDate) {
         this.quantity = quantity;
         this.productName = productName;
         this.deliveryCompany=deliveryCompany;
@@ -28,7 +28,17 @@ public class ProductReadyToDelivery {
         return deliveryCompany;
     }
 
-    public LocalDate getProductPreparationDate() {
+    public LocalDateTime getProductPreparationDate() {
         return productPreparationDate;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductReadyToDelivery{" +
+                "productName='" + productName + '\'' +
+                ", quantity=" + quantity +
+                ", deliveryCompany=" + deliveryCompany +
+                ", productPreparationDate=" + productPreparationDate +
+                '}';
     }
 }

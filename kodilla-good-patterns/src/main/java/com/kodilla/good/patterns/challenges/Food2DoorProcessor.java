@@ -11,22 +11,16 @@ public class Food2DoorProcessor {
     }
 
     public boolean foodDeliveryProcess(ProductReadyToDelivery product2Deliver) {
-        DeliveryCompany company=product2Deliver.getDeliveryCompany();
 
+        DeliveryCompany company=product2Deliver.getDeliveryCompany();
         boolean result=company.deliver(product2Deliver);
 
-
-
- /*       boolean result=productOrderService.process(orderRequest);
-
         if (result) {
-            orderInformationService.send("Order successfully processed");
+            deliveriesInformationService.send("Delivery successfully processed");
             return true;
-
         } else {
-            orderInformationService.send("Can not process order");
+            deliveriesInformationService.send("Delivery cannot be realized.");
             return false;
         }
-  */
     }
 }
