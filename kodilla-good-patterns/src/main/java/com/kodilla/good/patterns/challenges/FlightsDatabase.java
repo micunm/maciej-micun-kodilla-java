@@ -1,10 +1,11 @@
 package com.kodilla.good.patterns.challenges;
 
 import java.util.HashSet;
-import java.util.Set;
 
-public class FlightDatabase {
-    public HashSet<Flight> getFlights() {
+public final class FlightsDatabase {
+    private final HashSet<Flight> flights=new HashSet<Flight>();
+
+    public FlightsDatabase() {
 
         Flight flight1 = new Flight("Warszawa", "Gdańsk");
         Flight flight2 = new Flight("Gdańsk", "Warszawa");
@@ -20,7 +21,6 @@ public class FlightDatabase {
         Flight flight12 = new Flight("Wilno", "Gdańsk");
         Flight flight13 = new Flight("Warszawa", "Gdańsk");
 
-        HashSet<Flight> flights = new HashSet<Flight>();
         flights.add(flight1);
         flights.add(flight2);
         flights.add(flight3);
@@ -34,9 +34,10 @@ public class FlightDatabase {
         flights.add(flight11);
         flights.add(flight12);
         flights.add(flight13);
+    }
 
-        return flights;
-
+    public HashSet<Flight> getFlightsSet() {
+        return new HashSet<>(flights);
     }
 }
 
