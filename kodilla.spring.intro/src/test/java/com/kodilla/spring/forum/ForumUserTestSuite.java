@@ -1,4 +1,4 @@
 package com.kodilla.spring.forum;
 
-public class ForumUserTestSutie {
+public class ForumUserTestSuite {
 }
