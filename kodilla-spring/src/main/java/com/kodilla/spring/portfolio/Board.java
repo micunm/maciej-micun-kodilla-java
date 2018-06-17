@@ -11,10 +11,6 @@ public class Board {
         this.doneList = doneList;
     }
 
-/*    public void taskAdd (String task, TaskList taskList) {
-        taskList.add(task);
-    }*/
-
     public TaskList getToDoList() {
         return toDoList;
     }
