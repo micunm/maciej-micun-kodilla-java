@@ -1,4 +1,10 @@
 package com.kodilla.patterns.strategy;
 
-public class CorporateCustomer {
+import com.kodilla.patterns.strategy.BalancedPredictor;
+
+public class CorporateCustomer extends Customer {
+    public CorporateCustomer(String name) {
+        super(name);
+        this.buyPredictor = new com.kodilla.patterns.strategy.BalancedPredictor();
+    }
 }

@@ -1,5 +1,7 @@
 package com.kodilla.patterns.strategy;
 
+import com.kodilla.patterns.strategy.BuyPredictor;
+
 public class AggressivePredictor implements BuyPredictor {
     @Override
     public String predictWhatToBuy() {
