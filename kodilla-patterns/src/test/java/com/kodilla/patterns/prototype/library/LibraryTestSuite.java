@@ -1,6 +1,5 @@
 package com.kodilla.patterns.prototype.library;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -58,7 +57,7 @@ public class LibraryTestSuite {
         }
 
         Assert.assertEquals(7, ((Set) books).size());
- //       Assert.assertEquals(7, books2.size());
+        Assert.assertEquals(7, books2.size());
         Assert.assertEquals(7, books3.size());
     }
 }
