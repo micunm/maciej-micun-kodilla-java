@@ -1,5 +1,6 @@
 package com.kodilla.patterns.builder.pizza;
 
+import com.kodilla.patterns.builder.bigmac.Ingredients;
 import org.junit.Assert;
 import org.junit.Test;
 

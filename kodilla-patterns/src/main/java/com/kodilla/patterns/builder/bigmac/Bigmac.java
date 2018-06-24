@@ -6,16 +6,16 @@ import java.util.List;
 public final class Bigmac {
     private final Bun bun;
     private final int burgers;
-    private final String sauce;
-    private final List<String> ingredients;
+    private final Sauce sauce;
+    private final Ingredients ingredients;
 
     public static class BigmacBuilder {
-        private final Bun bun;
-        private final int burgers;
-        private final String sauce;
-        private final List<String> ingredients=new ArrayList<>();
+        private Bun bun;
+        private int burgers;
+        private Sauce sauce;
+        private Ingredients ingredients=new Ingredients();
 
-        public Bigmac bun(Bun bun) {
+        public BigmacBuilder bun(Bun bun) {
             this.bun = bun;
             return this;
         }
@@ -24,13 +24,13 @@ public final class Bigmac {
             this.burgers = burgers;
             return this;
         }
-        public BigmacBuilder sauce(String sauce) {
+        public BigmacBuilder sauce(Sauce sauce) {
             this.sauce = sauce;
             return this;
         }
 
         public BigmacBuilder ingredient(String ingredient) {
-            ingredients.add(ingredient);
+            ingredients.addIngredients(ingredient);
             return this;
         }
 
@@ -39,28 +39,34 @@ public final class Bigmac {
         }
     }
 
-    private Pizza(final String bottom, final String sauce, List<String> ingredients) {
-        this.bottom = bottom;
-        this.sauce = sauce;
-        this.ingredients = new ArrayList<>(ingredients);
+    private Bigmac(final Bun bun, final int burgers, final Sauce sauce, Ingredients ingredients) {
+        this.bun = bun;
+        this.burgers = burgers;
+        this.sauce=sauce;
+        this.ingredients = ingredients;
     }
 
-    public String getBottom() {
-        return bottom;
+    public Bun getBun() {
+        return bun;
     }
 
-    public String getSauce() {
+    public int getBurgers() {
+        return burgers;
+    }
+
+    public Sauce getSauce() {
         return sauce;
     }
 
-    public List<String> getIngredients() {
+    public Ingredients getIngredients() {
         return ingredients;
     }
 
     @Override
     public String toString() {
-        return "Pizza{" +
-                "bottom='" + bottom + '\'' +
+        return "Bigmac{" +
+                "bun=" + bun +
+                ", burgers=" + burgers +
                 ", sauce='" + sauce + '\'' +
                 ", ingredients=" + ingredients +
                 '}';
