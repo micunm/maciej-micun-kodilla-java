@@ -15,8 +15,8 @@ public final class Bigmac {
         private Sauce sauce;
         private Ingredients ingredients=new Ingredients();
 
-        public BigmacBuilder bun(Bun bun) {
-            this.bun = bun;
+        public BigmacBuilder bun(String bun) {
+            this.bun = new Bun(bun);
             return this;
         }
 
@@ -24,8 +24,8 @@ public final class Bigmac {
             this.burgers = burgers;
             return this;
         }
-        public BigmacBuilder sauce(Sauce sauce) {
-            this.sauce = sauce;
+        public BigmacBuilder sauce(String sauce) {
+            this.sauce = new Sauce(sauce);
             return this;
         }
 
