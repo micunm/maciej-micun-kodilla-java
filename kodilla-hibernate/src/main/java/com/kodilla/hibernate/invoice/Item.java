@@ -2,6 +2,8 @@ package com.kodilla.hibernate.invoice;
 
 import java.math.BigDecimal;
 
+@Entity
+@Table(name = "ITEMS")
 public class Item {
     private int id;
     private Product product;
@@ -20,10 +22,20 @@ public class Item {
     public Item() {
     }
 
+    @Id
+    @GeneratedValue
+    @NotNull
+    @Column(name = "ITEM_ID", unique = true)
     public int getId() {
         return id;
     }
 
+    @OneToMany (
+            targetEntity=Product.class,
+            mappedBy="item",
+            cascade=CascadeType.ALL,
+            fetch=FetchType.LAZY
+    )
     public Product getProduct() {
         return product;
     }
