@@ -1,9 +1,12 @@
-package com.kodilla.hibernate.invoice.dao;
+package com.kodilla.hibernate.invoice;
 
 import com.kodilla.hibernate.invoice.Item;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name="INVOICES")
 public class Invoice {
     private int id;
     private String number;
@@ -16,14 +19,23 @@ public class Invoice {
     public Invoice() {
     }
 
+    @Id
+    @GeneratedValue
+    @Column(name="ID")
     public int getId() {
         return id;
     }
 
+    @Column(name="NUMBER")
     public String getNumber() {
         return number;
     }
 
+    @OneToMany(
+            targetEntity = Item.class,
+            mappedBy = "invoice",
+            fetch=FetchType.LAZY
+    )
     public List<Item> getItems() {
         return items;
     }
