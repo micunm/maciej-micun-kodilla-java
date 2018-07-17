@@ -3,6 +3,7 @@ package com.kodilla.hibernate.invoice;
 import com.kodilla.hibernate.invoice.Item;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -21,7 +22,8 @@ public class Invoice {
 
     @Id
     @GeneratedValue
-    @Column(name="ID")
+    @NotNull
+    @Column(name="INVOICE_ID", unique = true)
     public int getId() {
         return id;
     }

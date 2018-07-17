@@ -46,7 +46,7 @@ public class Item {
         return product;
     }
 
-    @Column(name="PRiCE")
+    @Column(name="PRICE")
     public BigDecimal getPrice() {
         return price;
     }

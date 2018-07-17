@@ -2,6 +2,7 @@ package com.kodilla.hibernate.tasklist.dao;
 
 import com.kodilla.hibernate.task.Task;
 import com.kodilla.hibernate.task.TaskFinancialDetails;
+import com.kodilla.hibernate.task.dao.TaskDao;
 import com.kodilla.hibernate.tasklist.TaskList;
 import org.junit.Assert;
 import org.junit.Test;
@@ -87,7 +88,7 @@ public class TaskListDaoTestSuite {
         task3.setTaskFinancialDetails(tfd3);
         task4.setTaskFinancialDetails(tfd4);
 
-        TaskList taskList = new TaskList(LISTNAME, "ToDo tasks");
+        TaskList taskList = new TaskList(TASKLISTNAME, "ToDo tasks");
         taskList.getTasks().add(task1);
         taskList.getTasks().add(task2);
         taskList.getTasks().add(task3);
@@ -112,7 +113,7 @@ public class TaskListDaoTestSuite {
             Assert.assertEquals(1, longTasks.size());
             Assert.assertEquals(3, shortTasks.size());
             Assert.assertEquals(3, enoughTimeTasks.size());
-            Assert.asserEquals(2, durationLongerThanTasks.size());
+            Assert.assertEquals(2, durationLongerThanTasks.size());
         } finally {
             //CleanUp
             taskListDao.delete(id);
