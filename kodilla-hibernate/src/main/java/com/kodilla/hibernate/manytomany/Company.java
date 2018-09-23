@@ -5,11 +5,19 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedNativeQuery (
-        name="Company.retrieveCompaniesWithFirst3Letters",
-        query="SELECT * FROM COMPANIES WHERE LEFT(COMPANY_NAME, 3) = :3LETTERS",
-        resultClass=Company.class
-)
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "Company.retrieveCompaniesWithFirst3Letters",
+                query = "SELECT * FROM COMPANIES WHERE LEFT(COMPANY_NAME, 3) = :3LETTERS",
+                resultClass = Company.class
+        ),
+        @NamedNativeQuery(
+                name = "Company.retrieveCompaniesWithFragment",
+                query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT('%', CONCAT(:FRAGMENT, '%'))",
+                resultClass = Company.class
+        )
+})
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
