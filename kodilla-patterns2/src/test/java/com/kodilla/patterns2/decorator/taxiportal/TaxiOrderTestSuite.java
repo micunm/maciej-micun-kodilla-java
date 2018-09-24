@@ -49,4 +49,15 @@ public class TaxiOrderTestSuite {
         assertEquals("Drive a course by Taxi Network", description);
     }
 
+    @Test
+    public void testMyTaxiWithChildSeatGetCost() {
+        //Given
+        TaxiOrder theOrder=new BasicTaxiOrder();
+        theOrder=new MyTaxiNetworkOrderDecorator(theOrder);
+        theOrder=new ChildSeatDecorator(theOrder);
+        //When
+        BigDecimal theCost= theOrder.getCost();
+        //Then
+        assertEquals("Drive a course by Taxi Network", description);
+    }
 }
