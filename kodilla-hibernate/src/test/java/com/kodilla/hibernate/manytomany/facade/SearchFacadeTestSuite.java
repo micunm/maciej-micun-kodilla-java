@@ -11,8 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
+@Transactional
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SearchFacadeTestSuite {
@@ -63,16 +65,17 @@ public class SearchFacadeTestSuite {
         Assert.assertEquals("Kovalsky", chosenEmployees2.get(0).getLastname());
         Assert.assertEquals("Software Machine", chosenCompanies.get(0).getName());
         Assert.assertEquals("Data Maesters", chosenCompanies2.get(0).getName());
+        Assert.assertEquals(1, chosenCompanies2.size());
 
-        //CleanUp
-        try {
-            companyDao.delete(softwareMachineId);
-            companyDao.delete(dataMaestersId);
-            companyDao.delete(greyMatterId);
-
-        } catch (Exception e) {
-            //do nothing
-        }
+//        //CleanUp
+//        try {
+//            companyDao.delete(softwareMachineId);
+//            companyDao.delete(dataMaestersId);
+//            companyDao.delete(greyMatterId);
+//
+//        } catch (Exception e) {
+//            //do nothing
+//        }
 
     }
 }

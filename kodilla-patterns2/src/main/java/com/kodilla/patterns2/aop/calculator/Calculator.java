@@ -1,6 +1,7 @@
 package com.kodilla.patterns2.aop.calculator;
 
 import org.springframework.steorotype.Component;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
