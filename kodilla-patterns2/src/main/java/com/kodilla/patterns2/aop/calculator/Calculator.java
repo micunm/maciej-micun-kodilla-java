@@ -1,11 +1,13 @@
 package com.kodilla.patterns2.aop.calculator;
 
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.steorotype.Component;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
 @Component
+@EnableAspectJAutoProxy
 public class Calculator {
     public double add(double x, double y) {
         return x+y;
@@ -29,6 +31,10 @@ public class Calculator {
     public BigDecimal factorial (BigDecimal n) {
         if(n.compareTo(BigDecimal.ONE)>0) {
             return n.multiply(factorial(n.substract(BigDecimal.ONE)));
-        } else if (n.equals(BigDecimal.ONE)) |||
+        } else if (n.equals(BigDecimal.ONE)) || n.equals(BigDecimal.ZERO)){
+            return BigDecimal.ONE;
+        } else {
+    throw new ArithmeticException("Factorial argument is negative!");
+        }
     }
 }
