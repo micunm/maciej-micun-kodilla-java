@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 
 public class StoredProcTestSuite {
     @Test
-    public void tesUpdateVipLevels() throws SQLException {
+    public void testUpdateVipLevels() throws SQLException {
         //Given
         DbManager dbManager=DbManager.getInstance();
         String sqlUpdate="UPDATE READERS SET VIP_LEVEL=\"Not set\"";
@@ -30,7 +30,7 @@ public class StoredProcTestSuite {
     }
 
     @Test
-    public void tesUpdateBestsellers() throws SQLException {
+    public void testUpdateBestsellers() throws SQLException {
         //Given
         DbManager dbManager=DbManager.getInstance();
         String sqlUpdate="UPDATE BOOKS SET BESTSELLER=FALSE";
