@@ -2,8 +2,9 @@ package com.kodilla.testing.loop;
 
 import org.junit.Test;
 
-public class testLoopAndConditionalBreakpoints {
+import static org.junit.Assert.assertEquals;
 
+public class testLoopAndConditionalBreakpoints {
     @Test
     public void testLoop() {
         //Given
@@ -14,7 +15,7 @@ public class testLoopAndConditionalBreakpoints {
             System.out.println("["+n+"] Sum equals: "+sum);
         }
         //Then
-        AssertEquals(499500, sum);
+        assertEquals(499500, sum);
     }
 
 }
