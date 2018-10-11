@@ -1,5 +1,21 @@
+plugins {
+    id 'java'
+}
+
 apply plugin: 'java'
 
 dependencies {
 
+}
+version 'unspecified'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
 }
